@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import TiendaPixel.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.inicio, name='inicio'),
+    path('juego/<int:juego_id>/', views.detalle_juego, name='detalle_juego'),
 ]
